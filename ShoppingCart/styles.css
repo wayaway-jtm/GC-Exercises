@@ -1,0 +1,9 @@
+span.itemName {
+    display: inline-block;
+    width: 15%;
+}
+
+span.itemPrice {
+    display: inline-block;
+    width: 10%;
+}
