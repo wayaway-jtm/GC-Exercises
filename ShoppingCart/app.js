@@ -10,8 +10,6 @@ form.addEventListener('submit', e => {
 
     let newItemName = document.querySelector('#inpItemName').value;
     let newItemPrice = document.querySelector('#inpItemPrice').value;
-    console.log('Item name: ', newItemName);
-    console.log('Item price: ', newItemPrice);
     AddItemToCart(newItemName, newItemPrice);
 })
 
@@ -22,6 +20,6 @@ function AddItemToCart(newItemName, newItemPrice) {
 
     let main = document.querySelector('main');
     main.innerHTML += `<p class='cartItem'>
-                            ${newItemName} &#8195; $${newItemPrice}
+                            ${newItemName} &#8195; $${Number(newItemPrice).toFixed(2)}
                         </p>`;
 }
