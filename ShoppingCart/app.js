@@ -1,35 +1,27 @@
+// Initializing cart
+let shoppingCart = new ShoppingCart();
 
 
-//
-// Taken from here: https://stackoverflow.com/questions/24163889/html5-input-for-money-currency
-//
+// Form button event
+const form = document.querySelector('form');
 
-var currencyInput = document.querySelector('input[type="currency"]');
-var currency = 'USD'; // https://www.currency-iso.org/dam/downloads/lists/list_one.xml
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
-currencyInput.addEventListener('focus', onFocus);
-currencyInput.addEventListener('blur', onBlur);
+    let newItemName = document.querySelector('#inpItemName').value;
+    let newItemPrice = document.querySelector('#inpItemPrice').value;
+    console.log('Item name: ', newItemName);
+    console.log('Item price: ', newItemPrice);
+    AddItemToCart(newItemName, newItemPrice);
+})
 
-function localStringToNumber( s ){
-    return Number(String(s).replace(/[^0-9.-]+/g,""));
-}
+// Add item to cart & update display
+function AddItemToCart(newItemName, newItemPrice) {
+    let newItem = new Item(newItemName, newItemPrice);
+    shoppingCart.addItem(newItem);
 
-function onFocus(e){
-  var value = e.target.value;
-  e.target.value = value ? localStringToNumber(value) : '';
-}
-
-function onBlur(e){
-  var value = e.target.value;
-
-  const options = {
-      maximumFractionDigits : 2,
-      currency              : currency,
-      style                 : "currency",
-      currencyDisplay       : "symbol"
-  }
-  
-  e.target.value = value 
-    ? localStringToNumber(value).toLocaleString(undefined, options)
-    : ''
+    let main = document.querySelector('main');
+    main.innerHTML += `<p class='cartItem'>
+                            ${newItemName} &#8195; $${newItemPrice}
+                        </p>`;
 }
