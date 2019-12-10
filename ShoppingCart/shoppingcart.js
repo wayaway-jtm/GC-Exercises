@@ -23,6 +23,13 @@ class ShoppingCart {
     }
 
     printTotal() {
+        let totalPrice = 0;
+        for (const item of this.items) {
+            totalPrice += item.price;
+        }
 
+        totalPrice *= 1.06;
+        console.log('Total: ', totalPrice);
+        return totalPrice;
     }
 }
