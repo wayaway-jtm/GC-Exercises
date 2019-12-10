@@ -19,7 +19,11 @@ function AddItemToCart(newItemName, newItemPrice) {
     shoppingCart.addItem(newItem);
 
     let main = document.querySelector('main');
-    main.innerHTML += `<p class='cartItem'>
-                            ${newItemName} &#8195; $${Number(newItemPrice).toFixed(2)}
+    main.innerHTML += `<p class='cartItem' id='${newItemName + newItemPrice.toString()}'>
+                            <label>
+                                <span class='itemName'>${newItemName}</span>
+                                <span class='itemPrice'>$${Number(newItemPrice).toFixed(2)}</span>
+                                <input type='checkbox' id='${newItemName + newItemPrice.toString()}'>
+                            </label>
                         </p>`;
 }
