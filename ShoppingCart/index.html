@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping Cart</title>
-</head>
-<body>
-    
-</body>
-<script src="shoppingcart.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles.css">
+        <title>Shopping Cart</title>
+    </head>
+    <body>
+        <h1>Add Item</h1>
+        <form>
+            <p><label>
+                    Name:
+                    <input type="text" name="inpItemName" id="inpItemName" placeholder="Item name">
+                </label>
+            </p>
+            <p><label>
+                    Price:
+                    <input type="currency" name="inpItemPrice" id="inpItemPrice" placeholder="Item price">
+                </label>
+            </p>
+            <button>Add to cart</button>
+        </form>
+        <h1>Shopping Cart</h1>
+        <main>
+
+        </main>
+    </body>
+    <script src="shoppingcart.js"></script>
+    <script src="app.js"></script>
 </html>
