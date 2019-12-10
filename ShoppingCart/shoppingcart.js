@@ -14,8 +14,8 @@ class ShoppingCart {
         this.items.push(new Item(itemName, itemPrice));
     }
 
-    removeItem(itemName) {
-        this.items.splice(this.items.findIndex(item => item.name === itemName), 1);
+    removeItem(itemName, itemPrice) {
+        this.items.splice(this.items.findIndex(item => (item.name === itemName && item.price === itemPrice)), 1);
     }
 
     editItem() {
